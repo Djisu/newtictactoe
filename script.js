@@ -6,9 +6,17 @@ const board = document.getElementById('board')
 
 let circleTurn
 
-cellElements.forEach(cell => {
-    cell.addEventListener('click', handleClick, { once: true })
-})
+startGame()
+
+function startGame(){
+    circleTurn = false
+    cellElements.forEach(cell => {
+        cell.addEventListener('click', handleClick, { once: true })
+    })
+    setBoardHoverClass()
+}
+
+
 
 function handleClick(e){
     const cell = e.target
